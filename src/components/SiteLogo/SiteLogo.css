@@ -1,0 +1,11 @@
+.siteLogo {
+  margin-left: 70px;
+  max-width: 38px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  .siteLogo {
+    margin-left: 30px;
+  }
+}

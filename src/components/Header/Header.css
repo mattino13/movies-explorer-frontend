@@ -1,0 +1,13 @@
+.header {
+  background-color:#FFFFFF;
+  max-width: 1280px;
+  min-height: 74px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_dark {
+  background-color:#5C5C5C;
+}
