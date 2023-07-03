@@ -6,18 +6,6 @@
   margin: auto;
 }
 
-@media screen and (max-width: 1000px) {
-  .portfolio {
-    min-height: 480px;
-  }
-}
-
-@media screen and (max-width: 430px) {
-  .portfolio {
-    min-height: 364px;
-  }
-}
-
 .portfolio__content {
   display: flex;
   flex-direction: row;
@@ -27,33 +15,9 @@
   margin: 0px 70px;
 }
 
-@media screen and (max-width: 1000px) {
-  .portfolio__content {
-    margin: 0px 50px;
-  }
-}
-
-@media screen and (max-width: 430px) {
-  .portfolio__content {
-    margin: 0px 14px;
-  }
-}
-
 .portfolio__content_none {
   border-bottom: none;
   margin-bottom: 105px;
-}
-
-@media screen and (max-width: 1000px) {
-  .portfolio__content_none {
-    margin-bottom: 70px;
-  }
-}
-
-@media screen and (max-width: 720px) {
-  .portfolio__content_none {
-    margin-bottom: 51px;
-  }
 }
 
 .portfolio__subtitle {
@@ -64,20 +28,6 @@
   margin: 101px 0px 30px 70px;
 }
 
-@media screen and (max-width: 1000px) {
-  .portfolio__subtitle {
-    margin-top: 90px;
-    margin-left: 50px;
-  }
-}
-
-@media screen and (max-width: 430px) {
-  .portfolio__subtitle {
-    margin: 70px 0px 20px 14px;
-    font-size: 14px;
-  }
-}
-
 .portfolio__title {
   font-weight: 400;
   font-size: 30px;
@@ -85,33 +35,61 @@
   margin: 20px 0px 19px;
 }
 
-@media screen and (max-width: 1000px) {
-  .portfolio__title {
-    font-size: 28px;
-  }
-}
-
-@media screen and (max-width: 720px) {
-  .portfolio__title {
-    font-size: 18px;
-    line-height: 28px;
-  }
-}
-
 .portfolio__icon {
   max-width: 29px;
   min-height: 60px;
+  cursor: pointer;
+}
+
+.portfolio__icon:hover {
+  opacity: 0.6;
 }
 
 @media screen and (max-width: 1000px) {
+  .portfolio {
+    min-height: 480px;
+  }
+  .portfolio__content {
+    margin: 0px 50px;
+  }
+  .portfolio__content_none {
+    margin-bottom: 70px;
+  }
+  .portfolio__subtitle {
+    margin-top: 90px;
+    margin-left: 50px;
+  }
+  .portfolio__title {
+    font-size: 28px;
+  }
   .portfolio__icon {
     max-width: 27px;
   }
 }
 
 @media screen and (max-width: 720px) {
+  .portfolio__content_none {
+    margin-bottom: 51px;
+  }
+  .portfolio__title {
+    font-size: 18px;
+    line-height: 28px;
+  }
   .portfolio__icon {
     max-width: 18px;
     min-height: 28px
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .portfolio {
+    min-height: 364px;
+  }
+  .portfolio__content {
+    margin: 0px 14px;
+  }
+  .portfolio__subtitle {
+    margin: 70px 0px 20px 14px;
+    font-size: 14px;
   }
 }

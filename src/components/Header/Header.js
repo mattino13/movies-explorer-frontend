@@ -11,7 +11,7 @@ function Header({ loggedIn }) {
   const currentLocation = useLocation().pathname;
 
   return (
-    <header className={`header ${currentLocation === "/" && "header_dark"}`}>
+    <header className={`header ${currentLocation === "/" ? "header_dark" : ""}`}>
       <SiteLogo/>
       <Navigation loggedIn={loggedIn}></Navigation> 
     </header>

@@ -18,11 +18,10 @@ function SearchForm({ onSearch }) {
         <input type="search" className="searchForm__item" placeholder="Фильм" />
         <button type="submit" className="searchForm__button" />
       
-        <label className="searchForm__checkboxContainer">
+        <label className="searchForm__checkbox-container">
           <input className="searchForm__checkbox" type="checkbox" id="switch" />
-          <span className="searchForm__checkboxSpan"/>
-
-        Короткометражки</label>
+          <span className="searchForm__checkbox-span"/>Короткометражки
+        </label>
 
       </form>
      

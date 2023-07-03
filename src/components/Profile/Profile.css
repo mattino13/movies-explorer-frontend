@@ -10,7 +10,7 @@
 .profile__tittle {
   font-size: 24px;
   font-weight: 500;
-  margin: 74px 0px 16px;
+  margin: 74px 0px 106px;
   text-align: center;
 }
 
@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 90px;
+
 }
 
 .profile__container_none {
@@ -29,7 +29,7 @@
 
 .profile__text {
   font-size: 11px;
-  font-weight: 400;
+  font-weight: 500;
   color: #000000;
   margin: 0px;
 }
@@ -41,6 +41,7 @@
   font-size: 11px;
   text-align: right;
   color: #000000;
+  width: 80%;
 }
 
 .profile__subtitle {
@@ -51,9 +52,44 @@
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  border: none;
+  background-color:#FFFFFF;
+  padding: 0px;
+}
+
+.profile__subtitle:hover {
+  opacity: 0.6;
 }
 
 .profile__subtitle_color {
   color: #EE3465;
   margin-top: 16px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 800px) {
+  .profile__tittle {
+    margin: 236px 0px 79px;
+  }
+  .profile__subtitle {
+    margin-top: 194px;
+  }
+  .profile__subtitle_color {
+    margin-top: 16px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .profile {
+    max-width: 260px;
+  }
+  .profile__tittle {
+    margin: 70px 0px 63px;
+  }
+  .profile__subtitle {
+    margin-top: 363px;
+  }
+  .profile__subtitle_color {
+    margin-top: 16px;
+  }
 }

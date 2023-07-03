@@ -35,7 +35,7 @@
   background-position: center;
 }
 
-.searchForm__checkboxContainer {
+.searchForm__checkbox-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +44,7 @@
   margin-top: 41px;
 }
 
-/*начало стилей CSS селектора*/
+/*стили переключателя*/
 .searchForm__checkbox {
   position: absolute;
   width: 1px; 
@@ -53,7 +53,7 @@
   clip-path: inset(0 0 0 0);
 }
 
-.searchForm__checkboxSpan {
+.searchForm__checkbox-span {
   cursor: pointer;
   width: 36px;
   height: 20px;
@@ -114,4 +114,22 @@
   transform: translateX(-100%);
 }
 
-/*конец стилей CSS селектора*/
+@media screen and (max-width: 920px) {
+  .searchForm__form {
+    margin: 80px 30px 0px;
+    min-height: 158px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .searchForm__form {
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+  .searchForm__item {
+    font-size: 11px;
+  }
+  .searchForm__checkbox-container {
+    font-size: 11px;
+  }
+}

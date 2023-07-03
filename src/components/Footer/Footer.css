@@ -31,6 +31,12 @@
   margin-bottom: 20px;
 }
 
+@media screen and (max-width: 430px) {
+  .footer__text {
+    font-size: 12px;
+  }
+}
+
 .footer__content {
   border-top: 1px solid #E8E8E8;
   font-weight: 400;
@@ -92,11 +98,16 @@
   margin-left: 20px;
 }
 
+.footer__link:hover {
+  opacity: 0.6;
+}
+
 @media screen and (max-width: 430px) {
   .footer__link {
     margin-left: 0;
     display: flex;
     justify-content: center;
     margin-top: 13px;
+    font-size: 12px;
   }
 }

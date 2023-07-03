@@ -1,0 +1,41 @@
+.pagenotfound {
+  text-align: center;
+}
+
+.pagenotfound__title {
+  font-size: 140px;
+  font-weight: 400;
+  margin: 246px 0px 5px;
+}
+
+.pagenotfound__text {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0px;
+}
+
+.pagenotfound__text_color {
+  font-size: 14px;
+  color: #2BE080;
+  margin-top: 184px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .pagenotfound__title {
+    margin-top: 408px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .pagenotfound__title {
+    margin: 329px 0px 10px;
+    font-size: 80px;
+  }
+  .pagenotfound__text {
+    font-size: 12px;
+  }
+  .pagenotfound__text_color {
+    margin-top: 184px;
+  }
+}

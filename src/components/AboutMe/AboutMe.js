@@ -16,7 +16,7 @@ function AboutMe() {
                         Недавно начал кодить. С 2015 года работал в компании «СКБ Контур». После того, 
                         как прошёл курс по веб-разработке, начал заниматься фриланс-заказами и ушёл с 
                         постоянной работы.</p>
-          <p className="aboutMe__text_end">Github</p>
+          <p className="aboutMe__text-end">Github</p>
         </div>
         <img className="aboutMe__photo" src={aboutMe} alt="Фото студента"/>
       </div>

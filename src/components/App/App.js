@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes, useNavigate, useLocation, Navigate } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import './App.css';
 import Header from '../Header/Header.js';
@@ -8,6 +8,7 @@ import Footer from '../Footer/Footer.js';
 import Register from '../Register/Register.js';
 import Login from '../Login/Login.js';
 import Profile from '../Profile/Profile.js';
+import PageNotFound from '../PageNotFound/PageNotFound.js';
 
 import Movies from '../Movies/Movies.js';
 import SavedMovies from '../SavedMovies/SavedMovies.js';
@@ -50,7 +51,7 @@ function App() {
             <Profile onLogout={handleLogout} onEditProfile={handleEditProfile}/>
           </>}
         />
-        
+        <Route path="*" element={<PageNotFound/>}/>
       </Routes>
 
       

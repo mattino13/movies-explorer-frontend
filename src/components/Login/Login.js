@@ -26,14 +26,15 @@ function Login({ onLogin }) {
           className="login__item login__item_color"/>
 
         <label htmlFor="password" className="login__text">Пароль</label>
-        <input id="password" required type="password" className="login__item" placeholder="Пароль"/>
+        <input id="password" required type="password" className="login__item login__item_none" />
+        <span className="login__text login__text_error">Что-то пошло не так...</span>
 
         <button type="submit" className="login__button-save">Войти</button>
 
       </form>
 
       <p className="login__subtitle">Ещё не зарегистрированы? 
-        <Link to="/sign-up" className="login__subtitle form__subtitle_color"> Регистрация</Link>
+        <Link to="/sign-up" className="login__subtitle login__subtitle_color"> Регистрация</Link>
       </p>
     </div>
   )

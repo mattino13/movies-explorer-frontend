@@ -5,6 +5,7 @@ import './Register.css'
 import SiteLogo from '../SiteLogo/SiteLogo.js';
 
 function Register({ onRegister }) {
+  
   function handleSubmit(e) {
     e.preventDefault();
   
@@ -19,7 +20,7 @@ function Register({ onRegister }) {
       <form onSubmit={handleSubmit}>
         <label htmlFor="userName" className="register__text">Имя</label>
         <input id="userName" minLength={2} maxLength={30} required
-              className="register__item" placeholder="Виталий" />
+              className="register__item" />
 
         <label htmlFor="email" className="register__text">E-mail</label>
         <input id="email" required type="email"
@@ -27,7 +28,8 @@ function Register({ onRegister }) {
 
         <label htmlFor="password" className="register__text">Пароль</label>
         <input id="password" type="password" required
-              className="register__item" placeholder="Пароль"/>
+              className="register__item register__item_none" />
+        <span className="register__text register__text_error">Что-то пошло не так...</span>
 
         <button type="submit" className="register__button-save">Зарегистрироваться</button>
       </form>
@@ -37,7 +39,6 @@ function Register({ onRegister }) {
       </p>  
     </div>
   )
-
 }
 
 export default Register;
