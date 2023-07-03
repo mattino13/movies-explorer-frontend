@@ -49,6 +49,8 @@
   font-size: 14px;
   margin: 99px 0px 0px;
   cursor: pointer;
+  text-decoration: none;
+  color: #000000;
 }
 
 .aboutMe__text-end:hover {

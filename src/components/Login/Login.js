@@ -34,7 +34,7 @@ function Login({ onLogin }) {
       </form>
 
       <p className="login__subtitle">Ещё не зарегистрированы? 
-        <Link to="/sign-up" className="login__subtitle login__subtitle_color"> Регистрация</Link>
+        <Link to="/sign-up" className="login__subtitle-color"> Регистрация</Link>
       </p>
     </div>
   )

@@ -19,6 +19,10 @@
   color: #000000;
 }
 
+.login__item:hover {
+  border-bottom: 2px solid #2BE080;
+}
+
 .login__item_color {
   border-bottom: 1px solid #2BE080;
 }
@@ -64,9 +68,18 @@
   opacity: 0.6;
 }
 
-.login__subtitle_color {
+.login__subtitle-color {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 16px 0px;
+  text-align: center;
+  text-decoration: none;
   color: #2BE080;
   padding-left: 6px;
+}
+
+.login__subtitle-color:hover {
+  opacity: 0.6;
 }
 
 .login__button-save {
@@ -107,6 +120,9 @@
     font-size: 12px;
   }
   .login__subtitle {
+    font-size: 12px;
+  }
+  .login__subtitle-color {
     font-size: 12px;
   }
 }

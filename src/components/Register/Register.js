@@ -35,7 +35,7 @@ function Register({ onRegister }) {
       </form>
 
       <p className="register__subtitle">Уже зарегистрированы? 
-          <Link to="/sign-in" className="register__subtitle register__subtitle_color"> Войти</Link>
+          <Link to="/sign-in" className="register__subtitle-color"> Войти</Link>
       </p>  
     </div>
   )
