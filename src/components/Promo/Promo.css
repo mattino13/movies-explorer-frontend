@@ -99,11 +99,15 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
+  text-decoration: none;
   padding: 0;
   background-color:#5C5C5C;
   border: 1px solid #FFFFFF;
   border-radius: 3px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .promo__button:hover {

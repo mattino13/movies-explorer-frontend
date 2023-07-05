@@ -15,12 +15,12 @@ function Movies() {
   }
 
   return (
-    <section className="movies">
+    <main className="movies">
       <SearchForm onSearch={handleSearch}/>
       {isLoading && <Preloader/>}
       {!isLoading && <MoviesCardList movies={movies.filter(item => (item.id <= 6))} viewMode="allMovies"/>}
       <button className="movies__button">Ещё</button>
-    </section>
+    </main>
  )
 }
 

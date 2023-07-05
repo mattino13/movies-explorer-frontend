@@ -3,7 +3,8 @@
   flex-direction: column;
   background: #FFFFFF;
   max-width: 396px;
-  margin: auto;
+  min-height: 560px;
+  margin: 70px auto;
   position: relative;
 }
 
@@ -34,7 +35,6 @@
 .register__logo {
   max-width: 38px;
   min-height: 38px;
-  margin-top: 70px;
   margin-left: 0;
 }
 
@@ -58,7 +58,7 @@
   font-size: 14px;
   font-weight: 400;
   color: #A0A0A0;
-  margin: 16px 0px;
+  margin: 16px 0px 0px;
   text-align: center;
   text-decoration: none;
 }
@@ -68,10 +68,6 @@
 }
 
 .register__subtitle-color {
-  font-size: 14px;
-  font-weight: 400;
-  margin: 16px 0px;
-  text-align: center;
   text-decoration: none;
   color: #2BE080;
   margin-left: 6px;
@@ -102,18 +98,17 @@
 }
 
 @media screen and (max-width: 800px) {
-  .register__logo {
-    margin-top: 232px;
+  .register {
+    margin: 232px auto;
   }
 }
 
 @media screen and (max-width: 520px) {
   .register {
     max-width: 260px;
+    min-height: 694px;
     align-items: center;
-  }
-  .register__logo {
-    margin-top: 56px;
+    margin: 56px auto 30px;
   }
   .register__button-save {
     font-size: 12px;

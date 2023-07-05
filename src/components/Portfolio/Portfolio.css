@@ -13,6 +13,12 @@
   align-items: center;
   border-bottom: 1px solid #E8E8E8;
   margin: 0px 70px;
+    color: #000000;
+  text-decoration: none;
+}
+
+.portfolio__content:hover {
+  opacity: 0.6;
 }
 
 .portfolio__content_none {
@@ -36,13 +42,9 @@
 }
 
 .portfolio__icon {
-  max-width: 29px;
-  min-height: 60px;
+  max-width: 18px;
+  min-height: 18px;
   cursor: pointer;
-}
-
-.portfolio__icon:hover {
-  opacity: 0.6;
 }
 
 @media screen and (max-width: 1000px) {
@@ -63,7 +65,8 @@
     font-size: 28px;
   }
   .portfolio__icon {
-    max-width: 27px;
+    max-width: 16px;
+    min-height: 16px
   }
 }
 
@@ -76,8 +79,8 @@
     line-height: 28px;
   }
   .portfolio__icon {
-    max-width: 18px;
-    min-height: 28px
+    max-width: 11px;
+    min-height: 11px
   }
 }
 

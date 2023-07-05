@@ -12,16 +12,6 @@
   }
 }
 
-.footer_mainpage {
-  border: 1px solid #000000;
-}
-
-@media screen and (max-width: 1000px) {
-  .footer_mainpage {
-    border: none;
-  }
-}
-
 .footer__text {
   font-weight: 400;
   font-size: 13px;
@@ -67,16 +57,6 @@
   .footer__content {
     margin: 0px 10px;
     padding-top: 17px;
-  }
-}
-
-.footer__content_mainpage {
-  border-top: 1px solid #000000;
-}
-
-@media screen and (max-width: 1000px) {
-  .footer__content_mainpage {
-    border-top: 1px solid #E8E8E8;
   }
 }
 
