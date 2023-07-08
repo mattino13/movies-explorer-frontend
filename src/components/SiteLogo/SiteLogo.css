@@ -1,0 +1,21 @@
+.siteLogo {
+  margin-left: 70px;
+  max-width: 38px;
+  cursor: pointer;
+}
+
+.siteLogo:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 920px) {
+  .siteLogo {
+    margin-left: 30px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .siteLogo {
+    margin-left: 14px;
+  }
+}

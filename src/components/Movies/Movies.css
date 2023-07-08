@@ -1,0 +1,27 @@
+.movies {
+  text-align: center;
+}
+
+.movies__button {
+  font-weight: 500;
+  font-size: 12px;
+  margin: 0;
+  min-width: 320px;
+  min-height: 36px;
+  padding: 0px;
+  border: 0px;
+  cursor: pointer;
+  background-color:#F9F9F9;
+  border-radius: 6px;
+  margin: 80px auto;
+}
+
+.movies__button:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 430px) {
+  .movies__button {
+    min-width: 240px;
+  }
+}
