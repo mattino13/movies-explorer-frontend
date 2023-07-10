@@ -5,7 +5,6 @@ import MoviesCard from '../MoviesCard/MoviesCard.js';
 //import movies from '../../utils/movies.js'
 
 function MoviesCardList({ movies, viewMode }) {
-
   return (
     <section className="moviesCardList">
       {movies.map((item) => (

@@ -3,14 +3,17 @@ import { Link } from 'react-router-dom';
 
 import './Login.css'
 import SiteLogo from '../SiteLogo/SiteLogo.js';
+import { useFormWithValidation } from '../../utils/UseForm.js';
+import { emailPattern } from '../../utils/utils.js';
 
 
-function Login({ onLogin }) {
+function Login({ onLogin, hasApiError, isCallingApi }) {
+  const { values, errors, isValid, handleChange, resetForm } = useFormWithValidation();
 
   function handleSubmit(e) {
     e.preventDefault();
   
-    onLogin();
+    onLogin(values);
   }
 
   return (
@@ -22,14 +25,22 @@ function Login({ onLogin }) {
       <form onSubmit={handleSubmit}>
 
         <label htmlFor="email" className="login__text">E-mail</label>
-        <input id="email" required type="email" 
-          className="login__item login__item_color"/>
+        <input id="email" name="email" value={values.email || ''} type="email" required pattern={emailPattern}
+          className="login__item login__item_color" onChange={handleChange}/>
+        <span className="login__text login__text_error">{errors.email || ''}</span>
 
         <label htmlFor="password" className="login__text">Пароль</label>
-        <input id="password" required type="password" className="login__item login__item_none" />
-        <span className="login__text login__text_error">Что-то пошло не так...</span>
+        <input id="password" name="password" value={values.password || ''} type="password" required
+          className="login__item login__item_none" onChange={handleChange}/>
+        <span className="login__text login__text_error">{errors.password || ''}</span>
 
-        <button type="submit" className="login__button-save">Войти</button>
+        {hasApiError && <span className="login__text login__text_error">Что-то пошло не так...</span>}
+
+        <button type="submit" 
+          className={`login__button-save ${ (!isValid || isCallingApi) ? "login__button-save_disabled" : ""}`}
+          disabled={!isValid || isCallingApi}>
+            Войти
+        </button>
 
       </form>
 

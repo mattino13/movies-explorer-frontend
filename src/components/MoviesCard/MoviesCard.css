@@ -11,13 +11,17 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 14px 0px 14px 14px;  
+  padding: 14px 0px 14px 14px;
+  max-width: 280px;
 }
 
 .moviesCard__title {
   font-weight: 500;
   font-size: 15px;
-  margin: 0;
+  margin: 0; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .moviesCard__time {

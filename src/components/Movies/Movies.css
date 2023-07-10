@@ -20,6 +20,16 @@
   opacity: 0.6;
 }
 
+.movies__text {
+  height: 100px;
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 10px;
+  font-weight: 400;
+  color: #EE3465;
+}
+
 @media screen and (max-width: 430px) {
   .movies__button {
     min-width: 240px;
