@@ -45,6 +45,16 @@
   color: #EE3465;
 }
 
+.profile__text_api-error {
+  color: #EE3465;
+  text-align: center;
+  margin-top: 170px;
+}
+
+.profile__info {
+  text-align: center;
+}
+
 .profile__item {
   border: 0;
   padding: 17px 0 16px;
@@ -63,7 +73,7 @@
   font-size: 13px;
   font-weight: 400;
   color: #000000;
-  margin: 204px 0px 0px;
+  margin: 20px 0px 0px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -94,8 +104,8 @@
   .profile__tittle {
     margin: 0px 0px 79px;
   }
-  .profile__subtitle {
-    margin-top: 194px;
+  .profile__text_api-error {
+    margin-top: 160px;
   }
   .profile__subtitle_color {
     margin-top: 16px;
@@ -111,8 +121,8 @@
   .profile__tittle {
     margin: 0px 0px 63px;
   }
-  .profile__subtitle {
-    margin-top: 363px;
+  .profile__text_api-error {
+    margin-top: 329px;
   }
   .profile__subtitle_color {
     margin-top: 16px;

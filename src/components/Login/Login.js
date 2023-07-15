@@ -25,7 +25,7 @@ function Login({ onLogin, hasApiError, isCallingApi }) {
       <form onSubmit={handleSubmit}>
 
         <label htmlFor="email" className="login__text">E-mail</label>
-        <input id="email" name="email" value={values.email || ''} type="email" required pattern={emailPattern}
+        <input id="email" name="email" value={values.email || ''} required pattern={emailPattern}
           className="login__item login__item_color" onChange={handleChange}/>
         <span className="login__text login__text_error">{errors.email || ''}</span>
 
@@ -34,7 +34,7 @@ function Login({ onLogin, hasApiError, isCallingApi }) {
           className="login__item login__item_none" onChange={handleChange}/>
         <span className="login__text login__text_error">{errors.password || ''}</span>
 
-        {hasApiError && <span className="login__text login__text_error">Что-то пошло не так...</span>}
+        <span className="login__text login__text_api-error">{hasApiError && 'Что-то пошло не так...'}</span>
 
         <button type="submit" 
           className={`login__button-save ${ (!isValid || isCallingApi) ? "login__button-save_disabled" : ""}`}

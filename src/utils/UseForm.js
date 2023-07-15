@@ -37,20 +37,21 @@ function useFormWithValidation(initialValues = {}) {
     const name = target.name;
     const value = target.value;
 
-    
-    if (name === 'email' && !isValidEmail(value)) {
-      console.log(name, value, isValidEmail(value));
-      target.setCustomValidity("Необходимо указать e-mail в формате name@domain.zone")
-    } else {
-      target.setCustomValidity("");
+    if (name === 'email') {
+      if (!isValidEmail(value)) {
+        target.setCustomValidity("Необходимо указать e-mail в формате name@domain.zone");
+      } else {
+        target.setCustomValidity("");
+      }
     }
 
-    if (name === 'name' && !isValidName(value)) {
-      target.setCustomValidity("Имя содержит только латиницу, кириллицу, пробел или дефис и быть длинной от 2х до 30 символов")
-    } else {
-      target.setCustomValidity("");
+    if (name === 'name') {
+      if (!isValidName(value)) {
+        target.setCustomValidity("Имя содержит только латиницу, кириллицу, пробел или дефис и быть длинной от 2х до 30 символов");
+      } else {
+        target.setCustomValidity("");
+      }
     }
-    
 
     setValues({...values, [name]: value});
     setErrors({...errors, [name]: target.validationMessage });

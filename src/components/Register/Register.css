@@ -56,6 +56,12 @@
   padding-top: 5px;
 }
 
+.register__text_api-error {
+  color: #EE3465;
+  text-align: center;
+  margin-top: 110px;
+}
+
 .register__subtitle {
   font-size: 14px;
   font-weight: 400;
@@ -91,7 +97,7 @@
   text-align: center;
   padding: 0;
   border: 0;
-  margin-top: 134px;
+  margin-top: 20px;
   cursor: pointer;  
 }
 
@@ -112,10 +118,17 @@
 
 @media screen and (max-width: 520px) {
   .register {
+    display: block;
     max-width: 260px;
     min-height: 694px;
-    align-items: center;
+    text-align: center;
     margin: 56px auto 30px;
+  }
+  .register__text {
+    text-align: left;
+  }
+  .register__text_api-error {
+    margin-top: 198px;
   }
   .register__button-save {
     font-size: 12px;

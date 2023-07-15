@@ -44,11 +44,6 @@ class MainApi {
     return this._request(this._buildUrl('/signin'), options);
   }
 
-  // проверка токена
-  //checkToken() {
-  //  return this._request(this._buildUrl('/users/me'), this._options);
-  //}
-
   // редактирование профиля
   setUserInfo(name, email) {
     const options = {
@@ -58,6 +53,11 @@ class MainApi {
     
     return this._request(this._buildUrl('/users/me'), options);
   }
+
+  // получение данных текущего пользователя по токену
+  getUserInfo() {
+    return this._request(this._buildUrl('/users/me'), this._options);
+  }
  
   // выход из профиля (только очистка cookie)
   signout() {
@@ -66,6 +66,30 @@ class MainApi {
       method: 'POST'};
 
     return this._request(this._buildUrl('/signout'), options);
+  }
+
+  // поставить лайк фильму
+  save(movieData) {
+    const options = {
+      ...this._options,
+      method: 'POST',
+      body: JSON.stringify(movieData)};
+    
+    return this._request(this._buildUrl('/movies'), options);
+  }
+
+  // снять лайк фильму
+  resetSave(cardId) {
+    const options = {
+      ...this._options,
+      method: 'DELETE'}; 
+
+    return this._request(this._buildUrl(`/movies/${cardId}`), options);
+  }
+
+   // получение сохраненных текущим пользователем фильмов
+   getSavedMovies() {
+    return this._request(this._buildUrl('/movies'), this._options);
   }
 }
 

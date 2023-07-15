@@ -28,7 +28,7 @@ function Register({ onRegister, hasApiError, isCallingApi }) {
         <span className="register__text register__text_error">{errors.name || ''}</span>
 
         <label htmlFor="email" className="register__text">E-mail</label>
-        <input id="email" name="email" value={values.email || ''} required pattern={emailPattern} type="email"
+        <input id="email" name="email" value={values.email || ''} required pattern={emailPattern}
           className="register__item register__item_color" onChange={handleChange}/>
         <span className="register__text register__text_error">{errors.email || ''}</span>
 
@@ -37,7 +37,7 @@ function Register({ onRegister, hasApiError, isCallingApi }) {
           className="register__item register__item_none" onChange={handleChange}/>
         <span className="register__text register__text_error">{errors.password || ''}</span>
 
-        {hasApiError && <span className="register__text register__text_error">Что-то пошло не так...</span>}
+        <span className="register__text register__text_api-error">{hasApiError && 'Что-то пошло не так...'}</span>
 
         <button 
           type="submit" 

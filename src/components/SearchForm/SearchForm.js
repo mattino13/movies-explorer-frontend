@@ -1,21 +1,21 @@
 import React from 'react';
 import './SearchForm.css'
 
-function SearchForm({ onSearch }) {
+function SearchForm({ onSearch, viewMode }) {
   const [searchString, setSearchString] = React.useState('');
   const [onlyShortMovies, setOnlyShortMovies] = React.useState(false);
 
   React.useEffect(() => {
-    const moviesSearchData = localStorage.getItem('MoviesSearchData');
-    
-    if (moviesSearchData) {
-      const parsedSearchData = JSON.parse(moviesSearchData)
-      setSearchString(parsedSearchData.searchString);
-      setOnlyShortMovies(parsedSearchData.onlyShortMovies);
+    if (viewMode === "allMovies") {
+      const moviesSearchData = localStorage.getItem('MoviesSearchData');
+      
+      if (moviesSearchData) {
+        const parsedSearchData = JSON.parse(moviesSearchData)
+        setSearchString(parsedSearchData.searchString);
+        setOnlyShortMovies(parsedSearchData.onlyShortMovies);
+      }
     }
-  },
-  []
-  ); 
+  }, []); 
 
   function handleSubmit(e) {
     e.preventDefault();

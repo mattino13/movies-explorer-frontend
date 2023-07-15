@@ -1,6 +1,6 @@
 const URLPrefix = 'https://api.nomoreparties.co';
 const emailPattern = '[a-z0-9]+@[a-z]+.[a-z]{2,5}';
-const userNamePattern = '[a-z0-9а-я]{2,}';
+const userNamePattern = '[ёЁA-Za-zа-яА-Я0-9 -\u2010]{2,}';
 
 function getFullImageURL(URLSuffix) {
   return `${URLPrefix}${URLSuffix}`;
@@ -8,17 +8,6 @@ function getFullImageURL(URLSuffix) {
 
 function formatMovieDuration(duration) {
   return `${Math.trunc(duration/60)}ч ${Math.round(duration % 60)}м`
-}
-
-function delayedCall(func, delay) {
-  let timer;
-  return _ => {
-    clearTimeout(timer)
-    timer = setTimeout(_ => {
-      timer = null;
-      func.apply(this, arguments);
-    }, delay)
-  };
 }
 
 function getRenderMoviesOptions() {
@@ -54,12 +43,25 @@ function movieFilterFunction(item, searchString, onlyShortMovies) {
   );
 }
 
+// ф-ция определяет, сохранен ли фильм movieToTest в избранном (savedMovies)
+function isMovieSaved(movieToTest, savedMovies) {
+  return savedMovies.some((item) => { return item.movieId === movieToTest.id});
+}
+
+// ф-ция возвращает _id (в нашем Api) для фильма по переданному id внешнего Api
+function getMovieMyId(movieToTest, savedMovies) {
+  let result;
+  savedMovies.forEach((item) => { if (item.movieId === movieToTest.id) { result = item._id }});
+  return result;
+}
+
 export { 
   getFullImageURL, 
   formatMovieDuration, 
-  delayedCall, 
   getRenderMoviesOptions, 
   movieFilterFunction,
+  isMovieSaved,
+  getMovieMyId,
   emailPattern,
   userNamePattern
 };
