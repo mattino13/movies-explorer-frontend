@@ -94,8 +94,8 @@ class MainApi {
 }
 
 const mainApi = new MainApi({
-  baseUrl: 'http://localhost:3001',
-  //baseUrl: 'https://api.mattino13-movies-explorer.nomoredomains.rocks',
+  //baseUrl: 'http://localhost:3001',
+  baseUrl: 'https://api.mattino13-movies-explorer.nomoredomains.rocks',
   credentials: 'include',
   headers: {
     'Content-Type': 'application/json'
