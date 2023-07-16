@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
 
 import './App.css';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext.js';
@@ -28,24 +28,45 @@ function App() {
   const [savedMovies, setSavedMovies] = React.useState([]);
   
   const navigate = useNavigate();
+  const currentPath = useLocation().pathname;
 
   React.useEffect(() => {
     const token = localStorage.getItem('hasToken');
     
     if (token) {
-      Promise.all([mainApi.getUserInfo(), mainApi.getSavedMovies()])
-      .then(([userResponse, moviesResponse]) => {
-          // пользователь
-          setCurrentUser(userResponse);
-          setLoggedIn(true);
+      // аутентифицируем пользователя по токену
+      mainApi.getUserInfo()
+        .then((userResponse) => {
+            // пользователь аутентифицирован - устанавливаем его состояние
+            setCurrentUser(userResponse);
+            setLoggedIn(true);
 
-          // его сохраненные фильмы
-          setSavedMovies(moviesResponse);
-        }
-      )
-      .catch((err) => console.log(err)); 
+            // загружаем его сохраненные фильмы
+            loadSavedMovies();
+            
+            // если пользователь был авторизован и закрыл вкладку, 
+            // он может вернуться сразу на любую страницу приложения по URL-адресу, 
+            // кроме страниц авторизации и регистрации
+            if (currentPath !== '/sign-in' && currentPath !== '/sign-up') {
+              navigate(currentPath, { replace: true });
+            } else {
+              navigate('/', { replace: true });
+            }
+
+          }
+        )
+        .catch((err) => console.log(err)); 
     } 
   }, []); 
+
+  // получаем сохраненные фильмы для аутентифицированного пользователя
+  function loadSavedMovies() {
+    mainApi.getSavedMovies()
+    .then((moviesResponse) => {
+      setSavedMovies(moviesResponse);
+    })
+    .catch((err) => console.log(err));
+  }
 
   function handleLogin({ email, password }) {
     setHasApiError(false);
@@ -55,8 +76,12 @@ function App() {
       .then((result) => {
           setHasApiError(false);
           localStorage.setItem('hasToken', 'true');
-          setLoggedIn(true);
           setCurrentUser(result);
+          setLoggedIn(true);
+
+          // загружаем его сохраненные фильмы
+          loadSavedMovies();
+
           navigate("/movies");
         }
       )

@@ -37,23 +37,35 @@ function Movies() {
     return result;
   }
 
-  function handleSearch(searchString, onlyShortMovies) {
-    setHasApiError(false);
-    setIsLoading(true);
-    setMaximunCardCount(getRenderMoviesOptions().initialCount);
-    moviesApi.getMovies()
-      .then((result) => {
-        const searchResult = result.filter((item) => { return movieFilterFunction(item, searchString, onlyShortMovies) });
-        const newSearchData = {searchString, onlyShortMovies, searchResult, apiResult: result};
+  function actualizeMoviesSearchData(searchString, onlyShortMovies, allMovies) {
+      const searchResult = allMovies.filter((item) => { return movieFilterFunction(item, searchString, onlyShortMovies) });
+      return {searchString, onlyShortMovies, searchResult, apiResult: allMovies};
+  }
 
-        localStorage.setItem('MoviesSearchData', JSON.stringify(newSearchData));
-        setSearchData(newSearchData);
-      })
-      .catch((err) => {
-        console.log(err);
-        setHasApiError(true);
-      })
-      .finally(() => setIsLoading(false));
+  function handleSearch(searchString, onlyShortMovies) {
+    setMaximunCardCount(getRenderMoviesOptions().initialCount);
+    const moviesSearchData = JSON.parse(localStorage.getItem('MoviesSearchData'));
+    
+    if (moviesSearchData) {
+      const newSearchData = actualizeMoviesSearchData(searchString, onlyShortMovies, moviesSearchData.apiResult);
+      localStorage.setItem('MoviesSearchData', JSON.stringify(newSearchData));
+      setSearchData(newSearchData);
+    } else {
+
+      setHasApiError(false);
+      setIsLoading(true);
+      moviesApi.getMovies()
+        .then((result) => {
+          const newSearchData = actualizeMoviesSearchData(searchString, onlyShortMovies, result);
+          localStorage.setItem('MoviesSearchData', JSON.stringify(newSearchData));
+          setSearchData(newSearchData);
+        })
+        .catch((err) => {
+          console.log(err);
+          setHasApiError(true);
+        })
+        .finally(() => setIsLoading(false));
+      }
   }
 
   function handleShowMore() {

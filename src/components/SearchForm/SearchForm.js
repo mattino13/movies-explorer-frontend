@@ -25,6 +25,7 @@ function SearchForm({ onSearch, viewMode }) {
 
   function handleCheckboxChange(e) {
     setOnlyShortMovies(e.target.checked);
+    onSearch(searchString, e.target.checked);
   }
 
   function handleTextInputChange(e) {
