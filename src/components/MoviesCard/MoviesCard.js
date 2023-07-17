@@ -1,19 +1,28 @@
 import React from 'react';
 import './MoviesCard.css'
 
-import { getFullImageURL, formatMovieDuration } from '../../utils/utils.js';
+import { formatMovieDuration, isMovieSaved } from '../../utils/utils.js';
+import { SavedMoviesContext } from '../../contexts/SavedMoviesContext.js';
 
-function MoviesCard({ movieData, isSaved, viewMode }) {
+function MoviesCard({ movieData, viewMode, onToggleSave }) {
+  const { savedMovies, toggleSaveHandler } = React.useContext(SavedMoviesContext);
+
   function getMoviesCardIconClass() {
-    if (isSaved && viewMode === "allMovies") {
-      return "moviesCard__icon_savedFlag"
+    
+    if (viewMode === "allMovies" && isMovieSaved(movieData, savedMovies)) {
+      return "moviesCard__icon_savedFlag";
     } 
     
-    if (isSaved && viewMode === "savedMovies") {
-      return "moviesCard__icon_savedCross"
+    // на вкладке "сохраненные фильмы" все фильмы в избранном :)
+    if (viewMode === "savedMovies") {
+      return "moviesCard__icon_savedCross";
     }
 
     return "";
+  }
+
+  function handleMovieSave() {
+    toggleSaveHandler(movieData);
   }
 
   return (
@@ -22,8 +31,10 @@ function MoviesCard({ movieData, isSaved, viewMode }) {
         <h2 className="moviesCard__title">{movieData.nameRU}</h2>
         <p className="moviesCard__time">{formatMovieDuration(movieData.duration)}</p>
       </div>
-      <button className={`moviesCard__icon ${getMoviesCardIconClass()}`}></button>
-      <img className="moviesCard__photo" src={getFullImageURL(movieData.imageURL)} alt="фото из фильма"/>
+      <button className={`moviesCard__icon ${getMoviesCardIconClass()}`} onClick={handleMovieSave}></button>
+      <a href={movieData.trailerLink} target="_blank" rel='noreferrer'>
+        <img className="moviesCard__photo" src={movieData.imageFull} alt="фото из фильма"/>
+      </a>
     </div>
  )
 }

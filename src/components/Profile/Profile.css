@@ -8,6 +8,11 @@
   position: relative;
 }
 
+.profile__form {
+  display: flex;
+  flex-direction: column;
+}
+
 .profile__tittle {
   font-size: 24px;
   font-weight: 500;
@@ -29,10 +34,25 @@
 }
 
 .profile__text {
+  display: block;
   font-size: 11px;
   font-weight: 500;
   color: #000000;
   margin: 0px;
+}
+
+.profile__text_error {
+  color: #EE3465;
+}
+
+.profile__text_api-error {
+  color: #EE3465;
+  text-align: center;
+  margin-top: 170px;
+}
+
+.profile__info {
+  text-align: center;
 }
 
 .profile__item {
@@ -46,20 +66,24 @@
 }
 
 .profile__item:hover {
-  border-bottom: 2px solid #2BE080;
+  border-bottom: 1px solid #2BE080;
 }
 
 .profile__subtitle {
   font-size: 13px;
   font-weight: 400;
   color: #000000;
-  margin: 204px 0px 0px;
+  margin: 20px 0px 0px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
   border: none;
   background-color:#FFFFFF;
   padding: 0px;
+}
+
+.profile__subtitle_disabled {
+  color: #C2C2C2;
 }
 
 .profile__subtitle:hover {
@@ -80,8 +104,8 @@
   .profile__tittle {
     margin: 0px 0px 79px;
   }
-  .profile__subtitle {
-    margin-top: 194px;
+  .profile__text_api-error {
+    margin-top: 160px;
   }
   .profile__subtitle_color {
     margin-top: 16px;
@@ -97,8 +121,8 @@
   .profile__tittle {
     margin: 0px 0px 63px;
   }
-  .profile__subtitle {
-    margin-top: 363px;
+  .profile__text_api-error {
+    margin-top: 329px;
   }
   .profile__subtitle_color {
     margin-top: 16px;
